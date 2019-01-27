@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--Kelly Turner-->
+<html>
+	<head>
+		<title>The Turner Robot Builder</title>
+		
+		<script>
+			function initialize()
+			{
+				sp = 0;
+				so = 0;
+				b = 0;
+				soVar = false;
+				lVar = false;
+				dVar = comment;
+			}
+			
+			function display()
+			{
+				document.getElementById("speed").innerHTML = ""+sp+""
+				document.getElementById("sound").innerHTML = ""+so+""
+				document.getElementById("brightness").innerHTML = ""+b+""
+			}
+
+			function changeSpeed(num)
+			{
+				sp = sp + num;
+				if(sp < 0)
+				{
+					sp = 0;
+				}
+				display();
+			}
+
+			function changeSound(num)
+			{
+				so = so + num;
+				if(so < 0)
+				{
+					so = 0;
+				}
+				display();
+			}
+
+			function changeBrightness(num)
+			{
+				b = b + num
+				if(b < 0)
+				{
+					b = 0;
+				}
+				display();
+			}
+
+			function togglePower()
+			{
+				if (soVar==false)
+					{
+						document.getElementById("power").innerHTML = "ON";
+						soVar = true;
+					}
+				else
+					{
+						document.getElementById("power").innerHTML = "OFF";
+						soVar = false;
+				}
+			}
+
+			function toggleLight()
+			{
+				if (lVar==false)
+					{
+						document.getElementById("light").innerHTML = "ON";
+						lVar = true;
+					}
+				else
+					{
+						document.getElementById("light").innerHTML = "OFF";
+						lVar = false;
+					}
+			}
+
+			function passString(inputValue)
+			{
+				if (inputValue == 1 )
+				{
+					stringID = "BEEP BEEP BOP BUP BOP!!!"
+				}
+
+				if (inputValue == 2)
+				{
+					stringID = "beep boop...bap bobop BEEP boop! *laugh track*"
+				}
+				document.getElementById("comment").innerHTML = ""+stringID+"";
+			}
+			
+		</script>
+		<style>
+			html
+			{
+				background-image: url("shipBackground.jpg");
+				text-align: center;
+			}
+
+
+			h1
+			{
+				color: cadetblue;
+				font-family: Impact;
+
+			}
+
+			h2
+			{
+				color: burlywood;
+				font-family: Impact;
+			}
+
+			h3
+			{
+				color: burlywood;
+				font-family: Impact;
+			}
+
+			button
+			{
+				color: black;
+				background: burlywood;
+			}
+
+			h4
+			{
+				color: burlywood;
+				font-family: Impact;
+			}
+
+		</style>
+	</head>
+	<body onload = "initialize();">
+		<h1>
+			The Turner Robot Builder
+		</h1>
+
+		<img src = "r2d2.jpg" />
+
+		<h2>
+			Speed Level: <div id = "speed"> 0 </div>
+		</h2>
+		<button onclick = "changeSpeed(20);">
+			+20
+		</button>
+		<button onclick = "changeSpeed(10);">
+			+10
+		</button>
+		<button onclick = "changeSpeed(5);">
+			+5
+		</button>
+		<button onclick = "changeSpeed(1);">
+			+1
+		</button>
+		<button onclick = "changeSpeed(-1);">
+			-1
+		</button>
+		<button onclick = "changeSpeed(-5);">
+			-5
+		</button>
+		<button onclick = "changeSpeed(-10);">
+			-10
+		</button>
+		<button onclick = "changeSpeed(-20);">
+			-20
+		</button>
+		<br></br>
+		
+		<h2>
+			Sound Level: <div id = "sound"> 0 </div>
+		</h2>
+		<button onclick = "changeSound(20);">
+			+20
+		</button>
+		<button onclick = "changeSound(10);">
+			+10
+		</button>
+		<button onclick = "changeSound(5);">
+			+5
+		</button>
+		<button onclick = "changeSound(1);">
+			+1
+		</button>
+		<button onclick = "changeSound(-1);">
+			-1
+		</button>
+		<button onclick = "changeSound(-5);">
+			-5
+		</button>
+		<button onclick = "changeSound(-10);">
+			-10
+		</button>
+		<button onclick = "changeSound(-20);">
+			-20
+		</button>
+		<br></br>
+
+		<h2>
+			Light Brightness Level: <div id = "brightness"> 0 </div>
+		</h2>
+		<button onclick = "changeBrightness(20);">
+			+20
+		</button>
+		<button onclick = "changeBrightness(10);">
+			+10
+		</button>
+		<button onclick = "changeBrightness(5);">
+			+5
+		</button>
+		<button onclick = "changeBrightness(1);">
+			+1
+		</button>
+		<button onclick = "changeBrightness(-1);">
+			-1
+		</button>
+		<button onclick = "changeBrightness(-5);">
+			-5
+		</button>
+		<button onclick = "changeBrightness(-10);">
+			-10
+		</button>
+		<button onclick = "changeBrightness(-20);">
+			-20
+		</button>
+		<br></br>
+		
+		
+		<h3>
+			Power: <div id = "power"> OFF </div>
+		</h3>
+		<button onclick="togglePower();">
+			Power On/Off
+		</button>
+		<br></br>
+		<h3>
+			Light: <div id="light"> OFF </div>
+		</h3>
+		<button onclick="toggleLight();">
+			Lights On/Off
+		</button>
+		<br></br>
+
+		<h4>
+			Say Something: <div id = "comment"> -silence- </div>
+		</h4>
+		
+		<button onclick = "passString(1);">
+			Panic!
+		</button>
+
+		<button onclick = "passString(2);"> 
+			Wit
+		</button>
+		
+
+
+	</body>
+	
+
+</html>
